@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_link_icon_links",
+  "info": {
+    "displayName": "IconLink",
+    "icon": "file"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "instagram",
+        "facebook"
+      ],
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
