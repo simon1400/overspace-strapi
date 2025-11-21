@@ -4,7 +4,7 @@ module.exports = {
       name: 'overspace-strapi',
       script: './node_modules/@strapi/strapi/bin/strapi.js',
       args: 'start',
-      cwd: '/var/www/overspace/strapi/current',
+      cwd: '/opt/overspace/strapi',
       instances: 1,
       exec_mode: 'fork',
       autorestart: true,
@@ -25,11 +25,11 @@ module.exports = {
 
   deploy: {
     production: {
-      user: 'dimi',
-      host: ['89.221.216.23'],
+      user: 'root',
+      host: ['157.90.169.205'],
       ref: 'origin/main',
       repo: 'git@github.com:simon1400/overspace-strapi.git',
-      path: '/var/www/overspace/strapi',
+      path: '/opt/overspace/strapi',
       ssh_options: 'StrictHostKeyChecking=no',
       'pre-deploy-local': 'echo "Deploying to production..."',
       'post-deploy':
@@ -38,7 +38,7 @@ module.exports = {
         'mkdir -p logs && ' +
         'pm2 reload ecosystem.config.js --env production && ' +
         'pm2 save',
-      'pre-setup': 'mkdir -p /var/www/overspace/strapi',
+      'pre-setup': 'mkdir -p /opt/overspace/strapi',
     },
   },
 };
